@@ -4492,3 +4492,763 @@ result = {'type': 'plot', 'value': 'C:/Users/prakr/OneDrive/Desktop/AI/Python/pr
 2024-07-30 01:24:26 [INFO] Executing Step 7: ResultValidation
 2024-07-30 01:24:26 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/prakr/OneDrive/Desktop/AI/Python/projects/chatbot/exports/charts/temp_chart.png'}
 2024-07-30 01:24:26 [INFO] Executing Step 8: ResultParsing
+2024-09-20 23:58:56 [INFO] Question: tell me about the employees in the dataset
+2024-09-20 23:58:57 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-09-20 23:58:57 [INFO] Prompt ID: 57cfa5e2-a98c-4381-9ce7-861c6b9070dc
+2024-09-20 23:58:57 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-09-20 23:58:57 [INFO] Executing Step 0: ValidatePipelineInput
+2024-09-20 23:58:57 [INFO] Executing Step 1: CacheLookup
+2024-09-20 23:58:57 [INFO] Using cached response
+2024-09-20 23:58:57 [INFO] Executing Step 2: PromptGeneration
+2024-09-20 23:58:57 [INFO] Executing Step 2: Skipping...
+2024-09-20 23:58:57 [INFO] Executing Step 3: CodeGenerator
+2024-09-20 23:58:57 [INFO] Executing Step 3: Skipping...
+2024-09-20 23:58:57 [INFO] Executing Step 4: CachePopulation
+2024-09-20 23:58:57 [INFO] Executing Step 4: Skipping...
+2024-09-20 23:58:57 [INFO] Executing Step 5: CodeCleaning
+2024-09-20 23:58:57 [INFO] 
+Code running:
+```
+employees_df = dfs[0]
+num_employees = len(employees_df)
+columns = employees_df.columns.tolist()
+unique_departments = employees_df['Department'].unique()
+result = {'type': 'string', 'value': f"The dataset contains {num_employees} employees with columns: {columns}. Unique departments: {', '.join(unique_departments)}."}
+        ```
+2024-09-20 23:58:57 [INFO] Executing Step 6: CodeExecution
+2024-09-20 23:58:57 [INFO] Executing Step 7: ResultValidation
+2024-09-20 23:58:57 [INFO] Answer: {'type': 'string', 'value': "The dataset contains 30859 employees with columns: ['Name', 'Job Titles', 'Department', 'Full or Part-Time', 'Salary or Hourly', 'Typical Hours', 'Annual Salary', 'Hourly Rate']. Unique departments: DEPT STREETS AND SANITATION, FIRE DEPARTMENT, DEPARTMENT OF POLICE, DEPT OF WATER MANAGEMENT, CHICAGO PUBLIC LIBRARY, OFFICE OF EMERGENCY MANAGEMENT, DEPT OF BUILDINGS, DEPARTMENT OF AVIATION, CHICAGO DEPT OF TRANSPORTATION, DEPARTMENT OF FINANCE, DAIS, DEPARTMENT OF PLANNING AND DEVELOPMENT, DEPARTMENT OF PUBLIC HEALTH, FAMILY AND SUPPORT SERVICES, CITY COUNCIL, BUS AFFAIRS AND CONSUMER PROT, DEPARTMENT OF HUMAN RESOURCES, DEPT OF CULTURAL AFFAIRS, DEPT OF ADMINISTRATIVE HEARING, PUBLIC SAFETY ADMINISTRATION, OFFICE OF BUDGET & MANAGEMENT, DEPT OF HOUSING, CITY TREASURER, CITY CLERK, COPA, IG, OFFICE OF THE MAYOR, DEPARTMENT OF LAW, COMM ANIMAL CARE AND CONTROL, COMMISSION ON HUMAN RELATIONS, MAYORS OFFICE-DISABILITIES, DEPARTMENT OF PROCUREMENT SERV, BOARD OF ELECTION COMMISSIONER, BOARD OF ETHICS, CCPSA, OFFICE OF CLIMATE AND ENVIRONMENTAL EQUITY, POLICE BOARD, LICENSE APPEAL COMMISSION."}
+2024-09-20 23:58:57 [INFO] Executing Step 8: ResultParsing
+2024-09-20 23:59:10 [INFO] Question: plot the graph for department vs salaries
+2024-09-20 23:59:10 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-09-20 23:59:10 [INFO] Prompt ID: 58efd87c-bbc5-4727-afe0-fcb7b4956887
+2024-09-20 23:59:10 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-09-20 23:59:10 [INFO] Executing Step 0: ValidatePipelineInput
+2024-09-20 23:59:10 [INFO] Executing Step 1: CacheLookup
+2024-09-20 23:59:10 [INFO] Using cached response
+2024-09-20 23:59:10 [INFO] Executing Step 2: PromptGeneration
+2024-09-20 23:59:10 [INFO] Executing Step 2: Skipping...
+2024-09-20 23:59:10 [INFO] Executing Step 3: CodeGenerator
+2024-09-20 23:59:10 [INFO] Executing Step 3: Skipping...
+2024-09-20 23:59:10 [INFO] Executing Step 4: CachePopulation
+2024-09-20 23:59:10 [INFO] Executing Step 4: Skipping...
+2024-09-20 23:59:10 [INFO] Executing Step 5: CodeCleaning
+2024-09-20 23:59:10 [INFO] Saving charts to C:\Users\Prakriti Chaubey\Desktop\kiku\AI\Python\projects\chatbot\exports\charts\temp_chart.png
+2024-09-20 23:59:10 [INFO] 
+Code running:
+```
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+plt.figure(figsize=(12, 6))
+plt.bar(dfs[0]['Department'], dfs[0]['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('C:/Users/Prakriti Chaubey/Desktop/kiku/AI/Python/projects/chatbot/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/Prakriti Chaubey/Desktop/kiku/AI/Python/projects/chatbot/exports/charts/temp_chart.png'}
+        ```
+2024-09-20 23:59:10 [INFO] Executing Step 6: CodeExecution
+2024-09-20 23:59:45 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 97, in execute
+    raise InvalidOutputValueMismatch(
+pandasai.exceptions.InvalidOutputValueMismatch: Value type <class 'str'> must match with type plot
+
+2024-09-20 23:59:45 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-09-20 23:59:45 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-09-20 23:59:45 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-09-20 23:59:45 [INFO] Using prompt: <dataframe>
+dfs[0]:30859x8
+Name,Job Titles,Department,Full or Part-Time,Salary or Hourly,Typical Hours,Annual Salary,Hourly Rate
+"VELAZQUEZ, ISABEL",CHIEF VOUCHER EXPEDITER,DEPARTMENT OF LAW,P,SALARY,,64944.0,27.87
+"BEAN, MARK P",SUPVSR OF CHILDREN SERVICES PROGRAMS,COPA,,HOURLY,35.0,,
+"TORRES, ERIC J",SUPERVISING REHABILITATION CONSTRUCTION SPECIALIST,DEPARTMENT OF PROCUREMENT SERV,F,HOURLY,10.0,87552.0,41.31
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ plot the graph for department vs salaries
+
+You generated this python code:
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+plt.figure(figsize=(12, 6))
+plt.bar(dfs[0]['Department'], dfs[0]['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('C:/Users/Prakriti Chaubey/Desktop/kiku/AI/Python/projects/chatbot/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/Prakriti Chaubey/Desktop/kiku/AI/Python/projects/chatbot/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 97, in execute
+    raise InvalidOutputValueMismatch(
+pandasai.exceptions.InvalidOutputValueMismatch: Value type <class 'str'> must match with type plot
+
+
+Fix the python code above and return the new python code:
+2024-09-20 23:59:45 [INFO] Executing Step 1: CodeGenerator
+2024-09-20 23:59:49 [INFO] Prompt used:
+            None
+            
+2024-09-20 23:59:49 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'],
+        'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'],
+        'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'],
+        'Full or Part-Time': ['P', '', 'F'],
+        'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'],
+        'Typical Hours': ['', '20.0', '10.0'],
+        'Annual Salary': [84984.0, 125100.0, None],
+        'Hourly Rate': [23.46, 22.38, None]}
+
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+            ```
+            
+2024-09-20 23:59:49 [INFO] Executing Step 2: CodeCleaning
+2024-09-20 23:59:49 [INFO] 
+Code running:
+```
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+        ```
+2024-09-20 23:59:49 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\pyplot.py", line 2956, in bar
+    return gca().bar(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\__init__.py", line 1473, in inner
+    return func(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\axes\_axes.py", line 2583, in bar
+    r = mpatches.Rectangle(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\patches.py", line 776, in __init__
+    self._convert_units()  # Validate the inputs.
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\patches.py", line 787, in _convert_units
+    y1 = self.convert_yunits(self._y0 + self._height)
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+2024-09-20 23:59:49 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2024-09-20 23:59:49 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-09-20 23:59:49 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-09-20 23:59:49 [INFO] Using prompt: <dataframe>
+dfs[0]:30859x8
+Name,Job Titles,Department,Full or Part-Time,Salary or Hourly,Typical Hours,Annual Salary,Hourly Rate
+"VELAZQUEZ, ISABEL",CHIEF VOUCHER EXPEDITER,DEPARTMENT OF LAW,P,SALARY,,64944.0,27.87
+"BEAN, MARK P",SUPVSR OF CHILDREN SERVICES PROGRAMS,COPA,,HOURLY,35.0,,
+"TORRES, ERIC J",SUPERVISING REHABILITATION CONSTRUCTION SPECIALIST,DEPARTMENT OF PROCUREMENT SERV,F,HOURLY,10.0,87552.0,41.31
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ plot the graph for department vs salaries
+
+You generated this python code:
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\pyplot.py", line 2956, in bar
+    return gca().bar(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\__init__.py", line 1473, in inner
+    return func(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\axes\_axes.py", line 2583, in bar
+    r = mpatches.Rectangle(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\patches.py", line 776, in __init__
+    self._convert_units()  # Validate the inputs.
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\patches.py", line 787, in _convert_units
+    y1 = self.convert_yunits(self._y0 + self._height)
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+
+Fix the python code above and return the new python code:
+2024-09-20 23:59:49 [INFO] Executing Step 1: CodeGenerator
+2024-09-20 23:59:55 [INFO] Prompt used:
+            None
+            
+2024-09-20 23:59:55 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+data = {
+    'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'],
+    'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'],
+    'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'],
+    'Full or Part-Time': ['P', '', 'F'],
+    'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'],
+    'Typical Hours': ['', '20.0', '10.0'],
+    'Annual Salary': [84984.0, 125100.0, None],
+    'Hourly Rate': [23.46, 22.38, None]
+}
+
+# Removing the row with 'None' Annual Salary for plotting
+data = {key: [val for val in values if val is not None] for key, values in data.items()}
+
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+            ```
+            
+2024-09-20 23:59:55 [INFO] Executing Step 2: CodeCleaning
+2024-09-20 23:59:55 [INFO] 
+Code running:
+```
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+data = {key: [val for val in values if val is not None] for key, values in data.items()}
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+        ```
+2024-09-20 23:59:55 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 4, in <module>
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\pyplot.py", line 2956, in bar
+    return gca().bar(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\__init__.py", line 1473, in inner
+    return func(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\axes\_axes.py", line 2520, in bar
+    x, height, width, y, linewidth, hatch = np.broadcast_arrays(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\numpy\lib\stride_tricks.py", line 540, in broadcast_arrays
+    shape = _broadcast_shape(*args)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\numpy\lib\stride_tricks.py", line 422, in _broadcast_shape
+    b = np.broadcast(*args[:32])
+ValueError: shape mismatch: objects cannot be broadcast to a single shape.  Mismatch is between arg 0 with shape (3,) and arg 1 with shape (2,).
+
+2024-09-20 23:59:55 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2024-09-20 23:59:55 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-09-20 23:59:55 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-09-20 23:59:55 [INFO] Using prompt: <dataframe>
+dfs[0]:30859x8
+Name,Job Titles,Department,Full or Part-Time,Salary or Hourly,Typical Hours,Annual Salary,Hourly Rate
+"VELAZQUEZ, ISABEL",CHIEF VOUCHER EXPEDITER,DEPARTMENT OF LAW,P,SALARY,,64944.0,27.87
+"BEAN, MARK P",SUPVSR OF CHILDREN SERVICES PROGRAMS,COPA,,HOURLY,35.0,,
+"TORRES, ERIC J",SUPERVISING REHABILITATION CONSTRUCTION SPECIALIST,DEPARTMENT OF PROCUREMENT SERV,F,HOURLY,10.0,87552.0,41.31
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ plot the graph for department vs salaries
+
+You generated this python code:
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+data = {key: [val for val in values if val is not None] for key, values in data.items()}
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 4, in <module>
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\pyplot.py", line 2956, in bar
+    return gca().bar(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\__init__.py", line 1473, in inner
+    return func(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\axes\_axes.py", line 2520, in bar
+    x, height, width, y, linewidth, hatch = np.broadcast_arrays(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\numpy\lib\stride_tricks.py", line 540, in broadcast_arrays
+    shape = _broadcast_shape(*args)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\numpy\lib\stride_tricks.py", line 422, in _broadcast_shape
+    b = np.broadcast(*args[:32])
+ValueError: shape mismatch: objects cannot be broadcast to a single shape.  Mismatch is between arg 0 with shape (3,) and arg 1 with shape (2,).
+
+
+Fix the python code above and return the new python code:
+2024-09-20 23:59:55 [INFO] Executing Step 1: CodeGenerator
+2024-09-21 00:00:00 [INFO] Prompt used:
+            None
+            
+2024-09-21 00:00:00 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 
+        'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 
+        'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 
+        'Full or Part-Time': ['P', '', 'F'], 
+        'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 
+        'Typical Hours': ['', '20.0', '10.0'], 
+        'Annual Salary': [84984.0, 125100.0, None], 
+        'Hourly Rate': [23.46, 22.38, None]}
+
+# Filtering out None values from the data
+data = {key: [val for val in values if val is not None] for key, values in data.items()}
+
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+            ```
+            
+2024-09-21 00:00:00 [INFO] Executing Step 2: CodeCleaning
+2024-09-21 00:00:00 [INFO] 
+Code running:
+```
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+data = {key: [val for val in values if val is not None] for key, values in data.items()}
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+        ```
+2024-09-21 00:00:00 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 4, in <module>
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\pyplot.py", line 2956, in bar
+    return gca().bar(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\__init__.py", line 1473, in inner
+    return func(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\axes\_axes.py", line 2520, in bar
+    x, height, width, y, linewidth, hatch = np.broadcast_arrays(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\numpy\lib\stride_tricks.py", line 540, in broadcast_arrays
+    shape = _broadcast_shape(*args)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\numpy\lib\stride_tricks.py", line 422, in _broadcast_shape
+    b = np.broadcast(*args[:32])
+ValueError: shape mismatch: objects cannot be broadcast to a single shape.  Mismatch is between arg 0 with shape (3,) and arg 1 with shape (2,).
+
+2024-09-21 00:00:00 [ERROR] Pipeline failed on step 6: shape mismatch: objects cannot be broadcast to a single shape.  Mismatch is between arg 0 with shape (3,) and arg 1 with shape (2,).
+2024-09-21 00:00:01 [INFO] Question: plot the graph for department vs salaries
+2024-09-21 00:00:01 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-09-21 00:00:01 [INFO] Prompt ID: 1b2ac89f-8a3a-4b26-af1d-5e6995c4c13d
+2024-09-21 00:00:01 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-09-21 00:00:01 [INFO] Executing Step 0: ValidatePipelineInput
+2024-09-21 00:00:01 [INFO] Executing Step 1: CacheLookup
+2024-09-21 00:00:01 [INFO] Using cached response
+2024-09-21 00:00:01 [INFO] Executing Step 2: PromptGeneration
+2024-09-21 00:00:01 [INFO] Executing Step 2: Skipping...
+2024-09-21 00:00:01 [INFO] Executing Step 3: CodeGenerator
+2024-09-21 00:00:01 [INFO] Executing Step 3: Skipping...
+2024-09-21 00:00:01 [INFO] Executing Step 4: CachePopulation
+2024-09-21 00:00:01 [INFO] Executing Step 4: Skipping...
+2024-09-21 00:00:01 [INFO] Executing Step 5: CodeCleaning
+2024-09-21 00:00:01 [INFO] Saving charts to C:\Users\Prakriti Chaubey\Desktop\kiku\AI\Python\projects\chatbot\exports\charts\temp_chart.png
+2024-09-21 00:00:01 [INFO] 
+Code running:
+```
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+plt.figure(figsize=(12, 6))
+plt.bar(dfs[0]['Department'], dfs[0]['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('C:/Users/Prakriti Chaubey/Desktop/kiku/AI/Python/projects/chatbot/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/Prakriti Chaubey/Desktop/kiku/AI/Python/projects/chatbot/exports/charts/temp_chart.png'}
+        ```
+2024-09-21 00:00:01 [INFO] Executing Step 6: CodeExecution
+2024-09-21 00:00:19 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 97, in execute
+    raise InvalidOutputValueMismatch(
+pandasai.exceptions.InvalidOutputValueMismatch: Value type <class 'str'> must match with type plot
+
+2024-09-21 00:00:19 [WARNING] Failed to execute code retrying with a correction framework [retry number: 1]
+2024-09-21 00:00:19 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-09-21 00:00:19 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-09-21 00:00:19 [INFO] Using prompt: <dataframe>
+dfs[0]:30859x8
+Name,Job Titles,Department,Full or Part-Time,Salary or Hourly,Typical Hours,Annual Salary,Hourly Rate
+"HOCHLEUTNER, JOHN R",PROGRAM DIR - CULTURAL AFFAIRS,DEPT OF ADMINISTRATIVE HEARING,,HOURLY,,83880.0,57.6
+"EVERETTE, ZEB L",SUPERVISING INVESTIGATOR-COPA,DEPARTMENT OF AVIATION,F,HOURLY,20.0,92700.0,
+"LUEVANOS, ALFREDO",ASST CHIEF ELEVATOR INSPECTOR,DEPT OF CULTURAL AFFAIRS,P,SALARY,35.0,,36.45
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ plot the graph for department vs salaries
+
+You generated this python code:
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+plt.figure(figsize=(12, 6))
+plt.bar(dfs[0]['Department'], dfs[0]['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('C:/Users/Prakriti Chaubey/Desktop/kiku/AI/Python/projects/chatbot/exports/charts/temp_chart.png')
+result = {'type': 'plot', 'value': 'C:/Users/Prakriti Chaubey/Desktop/kiku/AI/Python/projects/chatbot/exports/charts/temp_chart.png'}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 97, in execute
+    raise InvalidOutputValueMismatch(
+pandasai.exceptions.InvalidOutputValueMismatch: Value type <class 'str'> must match with type plot
+
+
+Fix the python code above and return the new python code:
+2024-09-21 00:00:19 [INFO] Executing Step 1: CodeGenerator
+2024-09-21 00:00:24 [INFO] Prompt used:
+            None
+            
+2024-09-21 00:00:24 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 
+        'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 
+        'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 
+        'Full or Part-Time': ['P', '', 'F'], 
+        'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 
+        'Typical Hours': ['', '20.0', '10.0'], 
+        'Annual Salary': [84984.0, 125100.0, None], 
+        'Hourly Rate': [23.46, 22.38, None]}
+
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+            ```
+            
+2024-09-21 00:00:24 [INFO] Executing Step 2: CodeCleaning
+2024-09-21 00:00:25 [INFO] 
+Code running:
+```
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+        ```
+2024-09-21 00:00:25 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\pyplot.py", line 2956, in bar
+    return gca().bar(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\__init__.py", line 1473, in inner
+    return func(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\axes\_axes.py", line 2583, in bar
+    r = mpatches.Rectangle(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\patches.py", line 776, in __init__
+    self._convert_units()  # Validate the inputs.
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\patches.py", line 787, in _convert_units
+    y1 = self.convert_yunits(self._y0 + self._height)
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+2024-09-21 00:00:25 [WARNING] Failed to execute code retrying with a correction framework [retry number: 2]
+2024-09-21 00:00:25 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-09-21 00:00:25 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-09-21 00:00:25 [INFO] Using prompt: <dataframe>
+dfs[0]:30859x8
+Name,Job Titles,Department,Full or Part-Time,Salary or Hourly,Typical Hours,Annual Salary,Hourly Rate
+"HOCHLEUTNER, JOHN R",PROGRAM DIR - CULTURAL AFFAIRS,DEPT OF ADMINISTRATIVE HEARING,,HOURLY,,83880.0,57.6
+"EVERETTE, ZEB L",SUPERVISING INVESTIGATOR-COPA,DEPARTMENT OF AVIATION,F,HOURLY,20.0,92700.0,
+"LUEVANOS, ALFREDO",ASST CHIEF ELEVATOR INSPECTOR,DEPT OF CULTURAL AFFAIRS,P,SALARY,35.0,,36.45
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ plot the graph for department vs salaries
+
+You generated this python code:
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 171, in execute_code
+    exec(code, environment)
+  File "<string>", line 3, in <module>
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\pyplot.py", line 2956, in bar
+    return gca().bar(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\__init__.py", line 1473, in inner
+    return func(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\axes\_axes.py", line 2583, in bar
+    r = mpatches.Rectangle(
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\patches.py", line 776, in __init__
+    self._convert_units()  # Validate the inputs.
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\matplotlib\patches.py", line 787, in _convert_units
+    y1 = self.convert_yunits(self._y0 + self._height)
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+
+Fix the python code above and return the new python code:
+2024-09-21 00:00:25 [INFO] Executing Step 1: CodeGenerator
+2024-09-21 00:00:30 [INFO] Prompt used:
+            None
+            
+2024-09-21 00:00:30 [INFO] Code generated:
+            ```
+            import matplotlib.pyplot as plt
+
+data = {
+    'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'],
+    'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'],
+    'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'],
+    'Full or Part-Time': ['P', '', 'F'],
+    'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'],
+    'Typical Hours': ['', '20.0', '10.0'],
+    'Annual Salary': [84984.0, 125100.0, None],
+    'Hourly Rate': [23.46, 22.38, None]
+}
+
+# Replace None values in 'Annual Salary' with 0
+data['Annual Salary'] = [salary if salary is not None else 0 for salary in data['Annual Salary']]
+
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+            ```
+            
+2024-09-21 00:00:30 [INFO] Executing Step 2: CodeCleaning
+2024-09-21 00:00:30 [INFO] 
+Code running:
+```
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+data['Annual Salary'] = [(salary if salary is not None else 0) for salary in data['Annual Salary']]
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+        ```
+2024-09-21 00:01:05 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+2024-09-21 00:01:06 [WARNING] Failed to execute code retrying with a correction framework [retry number: 3]
+2024-09-21 00:01:06 [INFO] Executing Pipeline: ErrorCorrectionPipeline
+2024-09-21 00:01:06 [INFO] Executing Step 0: ErrorPromptGeneration
+2024-09-21 00:01:06 [INFO] Using prompt: <dataframe>
+dfs[0]:30859x8
+Name,Job Titles,Department,Full or Part-Time,Salary or Hourly,Typical Hours,Annual Salary,Hourly Rate
+"HOCHLEUTNER, JOHN R",PROGRAM DIR - CULTURAL AFFAIRS,DEPT OF ADMINISTRATIVE HEARING,,HOURLY,,83880.0,57.6
+"EVERETTE, ZEB L",SUPERVISING INVESTIGATOR-COPA,DEPARTMENT OF AVIATION,F,HOURLY,20.0,92700.0,
+"LUEVANOS, ALFREDO",ASST CHIEF ELEVATOR INSPECTOR,DEPT OF CULTURAL AFFAIRS,P,SALARY,35.0,,36.45
+</dataframe>
+
+
+The user asked the following question:
+### QUERY
+ plot the graph for department vs salaries
+
+You generated this python code:
+data = {'Name': ['HIATT, KENNETH M', 'HARRIS, GREGORY', 'MCGUIRE, MATTHEW T'], 'Job Titles': ['LAW CLERK', 'DIR OF PROGRAM OPERATIONS', 'DIR OF FIELD OPERATIONS'], 'Department': ['DEPT OF HOUSING', 'CHICAGO DEPT OF TRANSPORTATION', 'MAYORS OFFICE-DISABILITIES'], 'Full or Part-Time': ['P', '', 'F'], 'Salary or Hourly': ['HOURLY', 'SALARY', 'HOURLY'], 'Typical Hours': ['', '20.0', '10.0'], 'Annual Salary': [84984.0, 125100.0, None], 'Hourly Rate': [23.46, 22.38, None]}
+data['Annual Salary'] = [(salary if salary is not None else 0) for salary in data['Annual Salary']]
+plt.figure(figsize=(12, 6))
+plt.bar(data['Department'], data['Annual Salary'], color='skyblue')
+plt.xlabel('Department')
+plt.ylabel('Annual Salary')
+plt.title('Department vs Salaries')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+  File "C:\Users\Prakriti Chaubey\miniconda3\envs\data-analysis-chatbot\lib\site-packages\pandasai\pipelines\chat\code_execution.py", line 175, in execute_code
+    raise NoResultFoundError("No result returned")
+pandasai.exceptions.NoResultFoundError: No result returned
+
+
+Fix the python code above and return the new python code:
+2024-09-21 00:01:06 [INFO] Executing Step 1: CodeGenerator
+2024-09-21 00:01:10 [ERROR] Pipeline failed on step 1: No code found in the response
+2024-09-21 00:01:10 [ERROR] Pipeline failed on step 6: No code found in the response
+2024-09-21 00:01:30 [INFO] Question: Who is the employee with highest salary ?
+2024-09-21 00:01:30 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-09-21 00:01:30 [INFO] Prompt ID: 59b5e0ef-a1bf-40e0-aa00-19b55ea54b42
+2024-09-21 00:01:30 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-09-21 00:01:30 [INFO] Executing Step 0: ValidatePipelineInput
+2024-09-21 00:01:30 [INFO] Executing Step 1: CacheLookup
+2024-09-21 00:01:30 [INFO] Executing Step 2: PromptGeneration
+2024-09-21 00:01:31 [INFO] Querying without using training data.
+2024-09-21 00:01:32 [INFO] Querying without using training docs.
+2024-09-21 00:01:32 [INFO] Using prompt: <dataframe>
+dfs[0]:30859x8
+Name,Job Titles,Department,Full or Part-Time,Salary or Hourly,Typical Hours,Annual Salary,Hourly Rate
+"GOODLOE, DEVON D",POLICE LEGAL OFFICER II,DEPARTMENT OF POLICE,F,HOURLY,,77292.0,
+"DELGADO, JOSE B",PARAMEDIC I/C (ASSIGNED AS TRAINING INSTRUCTOR),CITY TREASURER,,HOURLY,20.0,84900.0,47.52
+"BROGAN, MICHAEL C",POLICE OFFICER/EXPLSV DETECT K9 HNDLR,DEPARTMENT OF HUMAN RESOURCES,P,SALARY,40.0,,51.34
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+
+
+
+
+### QUERY
+ Who is the employee with highest salary ?
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-09-21 00:01:32 [INFO] Executing Step 3: CodeGenerator
+2024-09-21 00:01:34 [INFO] Prompt used:
+            None
+            
+2024-09-21 00:01:34 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+highest_salary_employee = dfs[0].loc[dfs[0]['Annual Salary'].idxmax()]['Name']
+
+# Declare result var:
+result = {
+    "type": "string",
+    "value": f"The employee with the highest salary is {highest_salary_employee}."
+}
+            ```
+            
+2024-09-21 00:01:34 [INFO] Executing Step 4: CachePopulation
+2024-09-21 00:01:34 [INFO] Executing Step 5: CodeCleaning
+2024-09-21 00:01:34 [INFO] 
+Code running:
+```
+highest_salary_employee = dfs[0].loc[dfs[0]['Annual Salary'].idxmax()]['Name']
+result = {'type': 'string', 'value': f'The employee with the highest salary is {highest_salary_employee}.'}
+        ```
+2024-09-21 00:01:34 [INFO] Executing Step 6: CodeExecution
+2024-09-21 00:01:34 [INFO] Executing Step 7: ResultValidation
+2024-09-21 00:01:34 [INFO] Answer: {'type': 'string', 'value': 'The employee with the highest salary is RHEE, JAMIE L.'}
+2024-09-21 00:01:34 [INFO] Executing Step 8: ResultParsing
+2024-09-21 00:01:35 [INFO] Question: Who is the employee with highest salary ?
+2024-09-21 00:01:35 [INFO] Running PandasAI with bamboo_llm LLM...
+2024-09-21 00:01:35 [INFO] Prompt ID: 94687e9e-dd39-4f65-a3ff-b9d069621f92
+2024-09-21 00:01:35 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-09-21 00:01:35 [INFO] Executing Step 0: ValidatePipelineInput
+2024-09-21 00:01:35 [INFO] Executing Step 1: CacheLookup
+2024-09-21 00:01:35 [INFO] Using cached response
+2024-09-21 00:01:35 [INFO] Executing Step 2: PromptGeneration
+2024-09-21 00:01:35 [INFO] Executing Step 2: Skipping...
+2024-09-21 00:01:35 [INFO] Executing Step 3: CodeGenerator
+2024-09-21 00:01:35 [INFO] Executing Step 3: Skipping...
+2024-09-21 00:01:35 [INFO] Executing Step 4: CachePopulation
+2024-09-21 00:01:35 [INFO] Executing Step 4: Skipping...
+2024-09-21 00:01:35 [INFO] Executing Step 5: CodeCleaning
+2024-09-21 00:01:35 [INFO] 
+Code running:
+```
+highest_salary_employee = dfs[0].loc[dfs[0]['Annual Salary'].idxmax()]['Name']
+result = {'type': 'string', 'value': f'The employee with the highest salary is {highest_salary_employee}.'}
+        ```
+2024-09-21 00:01:35 [INFO] Executing Step 6: CodeExecution
+2024-09-21 00:01:35 [INFO] Executing Step 7: ResultValidation
+2024-09-21 00:01:35 [INFO] Answer: {'type': 'string', 'value': 'The employee with the highest salary is RHEE, JAMIE L.'}
+2024-09-21 00:01:35 [INFO] Executing Step 8: ResultParsing
