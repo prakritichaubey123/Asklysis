@@ -8,9 +8,8 @@ from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
 
 load_dotenv()
-
+#pandas AI
 app = FastAPI()
-
 api_key = os.getenv("PANDASAI_API_KEY")
 if api_key:
     os.environ["PANDASAI_API_KEY"] = api_key
